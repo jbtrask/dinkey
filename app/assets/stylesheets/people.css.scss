@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  position: relative;
+  color: rgb(0, 0, 102);
+  font-family: Lucida, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 61.8%;
+  line-height: 1.618em;
+  background-color: rgb(118, 161, 203);
+}
+
+.backgroundsize body {
+  background-image: url(dinkey.bottom.jpg);
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
