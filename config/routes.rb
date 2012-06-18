@@ -12,6 +12,8 @@ Dinkey::Application.routes.draw do
 
   resources :people
 
+  root to: "people#index"
+
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
