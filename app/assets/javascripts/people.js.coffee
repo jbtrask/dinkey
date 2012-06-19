@@ -5,7 +5,9 @@
 $ ->
   setPadding = ->
     padding = $(window).width() * (1240.0 / 2592.0) * 0.61803399
-    $(".backgroundsize body").css "paddingBottom",  padding + "px"
+    body = $ ".backgroundsize body"
+    body.css "paddingBottom",  padding + "px"
+    body.css "minHeight", $(window).height() - padding + "px"
   setPadding()
   $(window).resize ->
     setPadding()

@@ -1,3 +1,11 @@
-<% @people.each do |person| %>
-  <p><%= person.name %></p>
-<% end %>
+<div class="people">
+  <% added = [] %>
+  <% @people.each do |person| %>
+    <% if person.couple.blank? %>
+      <p><%= person.name %></p>
+    <% elsif added.select{|c| c.id == person.couple.id}.blank? %>
+      <p><%= person.couple.name %></p>
+      <% added << person.couple %>
+    <% end %>
+  <% end %>
+</div>

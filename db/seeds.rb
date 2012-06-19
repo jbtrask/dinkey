@@ -66,10 +66,6 @@ create_couple!
 
 Person.create! name: "Mike"
 
-Person.create! name: "Giaocmo"
-Person.create! name: "Wendy"
-create_couple!
-
 Person.create! name: "Marie"
 Person.create! name: "Alex"
 create_couple!
@@ -78,5 +74,21 @@ Person.create! name: "Jordan"
 
 Person.create! name: "Mike"
 Person.create! name: "Val"
+create_couple!
+
+Person.create! name: "Giaocmo"
+Person.create! name: "Wendy"
+create_couple!
+
+Person.create! name: "Jonny"
+Person.create! name: "Jodi"
+create_couple!
+
+Person.create! name: "Dan"
+Person.create! name: "Kelly"
+create_couple!
+
+Person.create! name: "Aidan"
+Person.create! name: "Manny"
 create_couple!
 
