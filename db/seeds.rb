@@ -6,14 +6,77 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Person.create! name: "James Bradford Trask", sort_order: 10
+def create_couple!(people = nil)
+  if people.present?
+    last_person = people[1]
+    penultimate_person = people[0]
+  else
+    people = Person.all
+    last_person = people.last
+    penultimate_person = people[people.size - 2]
+  end
+  Couple.create! name: "#{penultimate_person.name} & #{last_person.name}", people: [ penultimate_person, last_person ]
+end
 
-Couple.create! name: "Travis & Constance", sort_order: 10, people: [
-  Person.create!(name: "Travis", sort_order: 20, couple_sort_order: 0),
-  Person.create!(name: "Constance", sort_order: 30, couple_sort_order: 1)
-]
+Person.create! name: "James Bradford Trask"
 
-Couple.create! name: "Han & Lisa", sort_order: 20, people: [
-  Person.create!(name: "Han", sort_order: 40, couple_sort_order: 0),
-  Person.create!(name: "Lisa", sort_order: 50, couple_sort_order: 1)
-]
+Person.create! name: "Travis"
+Person.create! name: "Constance"
+create_couple!
+
+Person.create! name: "Han"
+Person.create! name: "Lisa"
+create_couple!
+
+Person.create! name: "Jeff"
+Person.create! name: "Dawn"
+create_couple!
+
+Person.create! name: "Barry"
+Person.create! name: "Reese"
+create_couple!
+
+Person.create! name: "Katie"
+Person.create! name: "Mark"
+create_couple!
+
+Person.create! name: "Rachel"
+Person.create! name: "Josh"
+create_couple!
+
+Person.create! name: "Sofia"
+Person.create! name: "Alex"
+create_couple!
+
+Person.create! name: "Aram"
+Person.create! name: "Tamara"
+create_couple!
+
+Person.create! name: "Dawn"
+Person.create! name: "Bill"
+create_couple!
+
+Person.create! name: "Wendy"
+Person.create! name: "Mark"
+create_couple!
+
+Person.create! name: "Tarah"
+Person.create! name: "Julio"
+create_couple!
+
+Person.create! name: "Mike"
+
+Person.create! name: "Giaocmo"
+Person.create! name: "Wendy"
+create_couple!
+
+Person.create! name: "Marie"
+Person.create! name: "Alex"
+create_couple!
+
+Person.create! name: "Jordan"
+
+Person.create! name: "Mike"
+Person.create! name: "Val"
+create_couple!
+

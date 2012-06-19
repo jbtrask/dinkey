@@ -2,4 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-#$ -> alert 'WOW!!!'
+$ ->
+  setPadding = ->
+    padding = $(window).width() * (1240.0 / 2592.0) * 0.61803399
+    $(".backgroundsize body").css "paddingBottom",  padding + "px"
+  setPadding()
+  $(window).resize ->
+    setPadding()
