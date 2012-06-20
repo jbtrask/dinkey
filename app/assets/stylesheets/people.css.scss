@@ -2,13 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$border_a: rgba(255, 255, 255, 0.1618);
+$radius: 10px;
+$sky_blue: rgb(118, 161, 203);
+$border: $sky_blue * 1.1618;
+
 body {
   position: relative;
   color: rgb(0, 0, 102);
   font-family: Lucida, Verdana, Arial, Helvetica, sans-serif;
   font-size: 61.8%;
   line-height: 1.618em;
-  background-color: rgb(118, 161, 203);
+  background-color: $sky_blue;
   padding-bottom: 50px;
 }
 
@@ -19,12 +24,34 @@ body {
   background-repeat: no-repeat;
 }
 
-.people {
-  width: 320px;
-  margin: 0 auto;
-  p {
+.person {
+  margin: 10px;
+  width: 298px;
+  display: inline-block;
+  div {
+    min-height: 18px;
+    padding: 10px;
+  }
+  .name {
+    border: 1px solid $border;
+    border-radius: $radius $radius 0 0;
+    text-align: center;
     font-size: 14px;
     line-height: 18px;
-    text-align: center;
+  }
+  .status {
+    border: 1px dotted $border;
+    border-top: none;
+    border-radius: 0 0 $radius $radius;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.rgba {
+  .person {
+    .name, .status {
+      border-color: $border_a;
+    }
   }
 }

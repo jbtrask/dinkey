@@ -1,5 +1,3 @@
-<div class="people">
-  <% @display.each do |item| %>
-    <p><%= item.name %></p>
-  <% end %>
-</div>
+<% @display.each do |item| %>
+  <%=  render partial: "person", locals: { person: item } %>
+<% end %>

@@ -5,9 +5,11 @@
 $ ->
   setPadding = ->
     padding = $(window).width() * (1240.0 / 2592.0) * 0.61803399
-    body = $ ".backgroundsize body"
-    body.css "paddingBottom",  padding + "px"
-    body.css "minHeight", $(window).height() - padding + "px"
+    $(".backgroundsize body").css
+      paddingBottom: padding + "px"
+      minHeight: $(window).height() - padding + "px"
   setPadding()
   $(window).resize ->
     setPadding()
+  $(".person").click (e) ->
+    alert $(this).find(".name").text()
