@@ -24,6 +24,10 @@ Person.create! name: "Travis"
 Person.create! name: "Constance"
 create_couple!
 
+Person.create! name: "Andy"
+Person.create! name: "Candy"
+create_couple!
+
 Person.create! name: "Han"
 Person.create! name: "Lisa"
 create_couple!

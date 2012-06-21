@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$border_a: rgba(255, 255, 255, 0.1618);
 $radius: 10px;
+
 $sky_blue: rgb(118, 161, 203);
-$border: $sky_blue * 1.1618;
+
+$sky_light: $sky_blue * 1.061803399;
+$sky_light_a: rgba(255, 255, 255, 0.061803399);
+
+$border: $sky_blue * (1 + 0.314159265 * .61803399);
+$border_a: rgba(255, 255, 255, 0.314159265 * .61803399);
 
 body {
   position: relative;
@@ -15,6 +20,7 @@ body {
   line-height: 1.618em;
   background-color: $sky_blue;
   padding-bottom: 50px;
+  min-width: 320px;
 }
 
 .backgroundsize body {
@@ -37,6 +43,7 @@ body {
     text-align: center;
     font-size: 14px;
     line-height: 18px;
+    background-color: $sky_light;
   }
   .status {
     border: 1px dotted $border;
@@ -52,6 +59,9 @@ body {
   .person {
     .name, .status {
       border-color: $border_a;
+    }
+    .name {
+      background-color: $sky_light_a;
     }
   }
 }
