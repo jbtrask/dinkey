@@ -4,10 +4,13 @@
 
 $radius: 10px;
 
+$mask_light_a: rgba(255, 255, 255, 0.061803399);
+$mask_dark_a: rgba(0, 0, 0, 0.061803399);
+
 $sky_blue: rgb(118, 161, 203);
 
 $sky_light: $sky_blue * 1.061803399;
-$sky_light_a: rgba(255, 255, 255, 0.061803399);
+$sky_dark: $sky_blue * (1 - 0.061803399);
 
 $border: $sky_blue * (1 + 0.314159265 * .61803399);
 $border_a: rgba(255, 255, 255, 0.314159265 * .61803399);
@@ -31,27 +34,31 @@ body {
 }
 
 .person {
-  margin: 10px auto;
+  margin: 10px auto 20px auto;
   width: 298px;
+  cursor: pointer;
   div {
     min-height: 18px;
     padding: 10px;
   }
   .name {
     border: 1px solid $border;
-    border-radius: $radius $radius 0 0;
+    border-radius: $radius;
     text-align: center;
     font-size: 14px;
     line-height: 18px;
     background-color: $sky_light;
   }
   .status {
+    width: 240px;
+    margin: 0 8px;
     border: 1px dotted $border;
     border-top: none;
     border-radius: 0 0 $radius $radius;
     font-size: 12px;
     line-height: 16px;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
+    background-color: $sky_dark;
   }
 }
 
@@ -61,7 +68,10 @@ body {
       border-color: $border_a;
     }
     .name {
-      background-color: $sky_light_a;
+      background-color: $mask_light_a;
+    }
+    .status {
+      background-color: $mask_dark_a;
     }
   }
 }

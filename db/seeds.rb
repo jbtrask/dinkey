@@ -96,3 +96,6 @@ Person.create! name: "Aidan"
 Person.create! name: "Manny"
 create_couple!
 
+Person.create! name: "Jesse"
+Person.create! name: "Isis"
+create_couple!
