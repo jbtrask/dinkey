@@ -40,6 +40,9 @@ body {
   div {
     min-height: 18px;
     padding: 10px;
+    &:hover {
+      outline: solid 1px black;
+    }
   }
   .name {
     border: 1px solid $border;
