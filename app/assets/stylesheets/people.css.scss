@@ -40,8 +40,8 @@ body {
   div {
     min-height: 18px;
     padding: 10px;
-    &:hover {
-      outline: solid 1px black;
+    &.hover {
+      border-color: $border;
     }
   }
   .name {
@@ -53,6 +53,7 @@ body {
     background-color: $sky_light;
   }
   .status {
+    position: relative;
     width: 240px;
     margin: 0 8px;
     border: 1px dotted $border;
@@ -62,6 +63,23 @@ body {
     line-height: 16px;
     padding: 10px 20px 20px 20px;
     background-color: $sky_dark;
+    form {
+      label {
+        display: none;
+      }
+      textarea {
+        display: none;
+        padding: 10px 20px 20px 20px;
+        background-color: $sky_dark;
+        border: none;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        color: rgb(0, 0, 102);
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
   }
 }
 
@@ -75,6 +93,11 @@ body {
     }
     .status {
       background-color: $mask_dark_a;
+    }
+    &.hover {
+      .name, .status {
+        border-color: $border;
+      }
     }
   }
 }
