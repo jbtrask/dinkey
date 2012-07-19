@@ -24,5 +24,8 @@ $ ->
       e.preventDefault()
       return false
     $(this).find(".status span").fadeOut 314.159265, ->
-      $(this).siblings("form").children("textarea").fadeIn 61.803399, ->
+      $(this).siblings("form").children("textarea").fadeIn 314.159265, ->
         $(this).focus()
+
+  $(".person textarea").blur (e) ->
+    console.log $(this).val()
