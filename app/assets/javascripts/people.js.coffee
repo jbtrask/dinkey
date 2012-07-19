@@ -19,13 +19,5 @@ $ ->
   , ->
     $(this).removeClass "hover"
 
-  $(".person").click (e) ->
-    if $(this).hasClass "edit"
-      e.preventDefault()
-      return false
-    $(this).find(".status span").fadeOut 314.159265, ->
-      $(this).siblings("form").children("textarea").fadeIn 314.159265, ->
-        $(this).focus()
-
   $(".person textarea").blur (e) ->
     console.log $(this).val()

@@ -1,10 +1,6 @@
 <div class="person">
-  <div class="name"><%= person.name %></div>
-  <div class="status">
-    <span><%=  person.status %></span>
-    <form target="#">
-      <label for="<%= "#{person.name.parameterize}_status" %>">Status</label>
-      <textarea id="<%= "#{person.name.parameterize}_status" %>" cols="32" rows="8" ><%=  person.status %></textarea>
-    </form>
-  </div>
+  <form target="#">
+    <label for="<%= "#{person.name.parameterize}_status" %>"><%= person.name %></label>
+    <textarea id="<%= "#{person.name.parameterize}_status" %>" cols="32" rows="8" ><%=  person.status %></textarea>
+  </form>
 </div>

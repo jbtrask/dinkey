@@ -9,6 +9,8 @@ $mask_dark_a: rgba(0, 0, 0, 0.061803399);
 
 $sky_blue: rgb(118, 161, 203);
 
+$blue_text: rgb(0, 0, 102);
+
 $sky_light: $sky_blue * 1.061803399;
 $sky_dark: $sky_blue * (1 - 0.061803399);
 
@@ -35,70 +37,52 @@ body {
 
 .person {
   margin: 10px auto 20px auto;
-  width: 298px;
+  width: 300px;
+  display: block;
   cursor: pointer;
-  div {
-    min-height: 18px;
-    padding: 10px;
-    &.hover {
-      font-weight: bold;
-      border-color: $border;
-    }
-  }
-  .name {
-    border: 1px solid $border;
-    border-radius: $radius;
-    text-align: center;
+  label {
+    color: $blue_text;
+    display: block;
     font-size: 14px;
     line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: 1px dotted $border;
+    border-radius: $radius;
     background-color: $sky_light;
   }
-  .status {
-    position: relative;
-    width: 240px;
-    margin: 0 8px;
-    border: 1px dotted $border;
-    border-top: none;
-    border-radius: 0 0 $radius $radius;
+  textarea {
+    color: $blue_text;
+    display: block;
     font-size: 12px;
     line-height: 16px;
+    margin: 0 8px;
+    border-top: none;
+    border-radius: 0 0 $radius $radius;
     padding: 10px 20px 20px 20px;
     background-color: $sky_dark;
-    form {
-      label {
-        display: none;
-      }
-      textarea {
-        display: none;
-        padding: 10px 20px 20px 20px;
-        background-color: $sky_dark;
-        border: none;
-        margin: 0;
-        padding: 0;
-        outline: none;
-        color: rgb(0, 0, 102);
-        font-size: 12px;
-        line-height: 16px;
-      }
+    overflow: hidden;
+    &:focus {
+      outline: 3px solid;
+    }
+  }
+  &.hover {
+    label {
+      border-style: solid;
+    }
+    textarea {
+      overflow: auto;
     }
   }
 }
 
 .rgba {
   .person {
-    &.hover, &.edit {
-      .name {
-        border-color: $border;
-        font-weight: bold;
-      }
-    }
-    .name, .status {
-      border-color: $border_a;
-    }
-    .name {
+    label {
       background-color: $mask_light_a;
     }
-    .status {
+    textarea {
       background-color: $mask_dark_a;
     }
   }
