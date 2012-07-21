@@ -20,9 +20,25 @@ $ ->
     $(this).removeClass "hover"
 
   $(".entry textarea").blur (e) ->
-    console.log "blur:  " + $(this).attr("id") + ":  " + $(this).val();
+    console.log 'saving'
+    $.ajax
+      url: "/people/" + $(this).attr("id")
+      dataType: "json"
+      type: "PUT"
+      data:
+        status: $(this).val()
+      success: ->
+        console.log 'success'
+      error: ->
+        console.log 'error'
+      done: ->
+        console.log 'done'
+      fail: ->
+        console.log 'fail'
+
+
   $(".entry textarea").click (e) ->
-    console.log "click:  " + "focus:  " + $(this).is(":focus") + ": " + $(this).attr("id") + ":  " + $(this).val();
+#    console.log "click:  " + "focus:  " + $(this).is(":focus") + ": " + $(this).attr("id") + ":  " + $(this).val();
 
 
 

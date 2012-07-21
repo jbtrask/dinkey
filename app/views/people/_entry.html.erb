@@ -1,6 +1,7 @@
+<% element_id = "#{entry.class.to_s}_#{entry.id.to_s}_status".downcase.parameterize %>
 <div class="entry">
   <form target="#">
-    <label for="<%= "#{entry.name.parameterize}_status" %>"><%= entry.name %></label>
-    <textarea id="<%= "#{entry.name.parameterize}_status" %>" cols="32" rows="8" ><%=  entry.status %></textarea>
+    <label for="<%= element_id %>"><%= entry.name %></label>
+    <textarea id="<%= element_id %>" cols="32" rows="8" ><%=  entry.status %></textarea>
   </form>
 </div>
