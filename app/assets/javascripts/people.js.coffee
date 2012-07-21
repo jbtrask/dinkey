@@ -21,4 +21,8 @@ $ ->
 
   $(".entry textarea").blur (e) ->
     console.log "blur:  " + $(this).attr("id") + ":  " + $(this).val();
+  $(".entry textarea").click (e) ->
+    console.log "click:  " + "focus:  " + $(this).is(":focus") + ": " + $(this).attr("id") + ":  " + $(this).val();
+
+
 

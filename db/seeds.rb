@@ -80,7 +80,7 @@ Person.create! name: "Mike"
 Person.create! name: "Val"
 create_couple!
 
-Person.create! name: "Giaocmo"
+Person.create! name: "Giacomo"
 Person.create! name: "Wendy"
 create_couple!
 
