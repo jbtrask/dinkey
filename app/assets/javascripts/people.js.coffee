@@ -20,5 +20,5 @@ $ ->
     $(this).removeClass "hover"
 
   $(".entry textarea").blur (e) ->
-    console.log $(this).val()
+    console.log "blur:  " + $(this).attr("id") + ":  " + $(this).val();
 
