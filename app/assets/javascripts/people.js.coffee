@@ -14,10 +14,11 @@ $ ->
   $(window).resize ->
     setPadding()
 
-  $(".person").hover ->
+  $(".entry").hover ->
     $(this).addClass "hover"
   , ->
     $(this).removeClass "hover"
 
-  $(".person textarea").blur (e) ->
+  $(".entry textarea").blur (e) ->
     console.log $(this).val()
+

@@ -2,15 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$radius: 10px;
+$radius: 20px;
 
-$mask_light_a: rgba(255, 255, 255, 0.061803399);
+$mask_light_a: rgba(255, 255, 255, 0.87654321);
 $mask_dark_a: rgba(0, 0, 0, 0.061803399);
 
 $sky_blue: rgb(118, 161, 203);
 
 $blue_text: rgb(0, 0, 102);
-
+$blue_text_a: rgba(0, 0, 102, 0.61803399);
+$light: $sky_blue * 2;
 $sky_light: $sky_blue * 1.061803399;
 $sky_dark: $sky_blue * (1 - 0.061803399);
 
@@ -37,53 +38,56 @@ body {
 
 .entry {
   margin: 10px auto 20px auto;
+  padding: 0;
   width: 300px;
-  display: block;
-  cursor: pointer;
+  min-width: 300px;
+  &.hover {
+    cursor: pointer;
+  }
   label {
-    color: $blue_text;
-    display: block;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: bold;
-    text-align: center;
+    display: none;
+    margin: 0;
     padding: 10px;
     border: 1px dotted $border;
     border-radius: $radius;
     background-color: $sky_light;
+    color: $blue_text;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
   }
   textarea {
+    margin: 0 8px;
+    padding: 50px 20px 20px 20px;
+    border: 1px dotted $blue_text;
+    border-radius: $radius;
     color: $blue_text;
-    display: block;
     font-size: 12px;
     line-height: 16px;
-    margin: 0 8px;
-    border-top: none;
-    border-radius: 0 0 $radius $radius;
-    padding: 10px 20px 20px 20px;
     background-color: $sky_dark;
     overflow: hidden;
     &:focus {
-      outline: 3px solid;
+      border: 1px solid black;
+      background-color: $light;
+      color: black;
     }
-  }
-  &.hover {
-    label {
-      border-style: solid;
-    }
-    textarea {
-      overflow: auto;
+    &:hover {
+      cursor: pointer;
     }
   }
 }
 
 .rgba {
-  .person {
+  .entry {
     label {
       background-color: $mask_light_a;
     }
     textarea {
       background-color: $mask_dark_a;
+      &:focus {
+        background-color: $mask_light_a;
+      }
     }
   }
 }
