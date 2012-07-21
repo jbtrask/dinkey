@@ -8,7 +8,7 @@ class PeopleController < ApplicationController
       elsif @display.select{|item| item.id == person.couple.id}.blank?
         @display << person.couple
       end
-      @display.last.status = Forgery(:lorem_ipsum).words((0..40).to_a.sample)
+      @display.last.status = Forgery(:lorem_ipsum).words((2..40).to_a.sample)
     end
     @display.shuffle!
   end
