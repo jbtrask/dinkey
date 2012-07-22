@@ -11,24 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722021355) do
+ActiveRecord::Schema.define(:version => 20120722022150) do
 
   create_table "couples", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "sort_order"
-    t.text     "status",     :limit => 255
+    t.string   "status",     :limit => 1000
   end
 
   create_table "people", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "couple_id"
     t.integer  "couple_sort_order"
     t.integer  "sort_order"
-    t.text     "status",            :limit => 255
+    t.string   "status",            :limit => 1000
   end
 
 end
