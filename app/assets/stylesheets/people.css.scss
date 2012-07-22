@@ -38,15 +38,20 @@ body {
 
 .entry {
   position: relative;
-  margin: 10px auto 20px auto;
+  margin: 30px auto 0 auto;
   padding: 0;
   width: 300px;
   min-width: 300px;
+  height: 200px;
+  min-height: 200px;
   &.hover {
     cursor: pointer;
     label {
       color: black;
     }
+  }
+  form {
+    height: 200px;
   }
   label {
     position: absolute;
@@ -67,9 +72,10 @@ body {
   }
   textarea {
     margin: 0 8px;
-    padding: 50px 20px 20px 20px;
+    padding: 50px 20px 30px 20px;
     border: 1px dotted $blue_text;
     width: 242px;
+    height: 118px;
     border-radius: $radius;
     color: $blue_text;
     font-size: 12px;
@@ -85,6 +91,17 @@ body {
         color: black;
       }
     }
+  }
+  .spinner {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
