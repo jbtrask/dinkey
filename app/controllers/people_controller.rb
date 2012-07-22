@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
     begin
       class_name, item_id = params[:id].split "_"
       entry = class_name == "couple" ? Couple.find(item_id) : Person.find(item_id)
-      entry.update_attributes! :status, params[:status]
+      entry.update_attribute :status, params[:status]
       result = { result: :success }
     rescue Exception => ex
       Rails.logger.debug(ex.inspect)
