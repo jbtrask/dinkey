@@ -21,26 +21,30 @@ $ ->
   , ->
     $(this).removeClass "hover"
 
-  $(".entry textarea").blur (e) ->
-    console.log 'saving'
-    $(this).parents(".entry").find(".spinner").fadeIn fadeDelay, ->
-      $.ajax
-        url: "/people/" + $(this).attr("id")
-        dataType: "json"
-        type: "PUT"
-        context: this
-        data:
-          status: $(this).val()
-        success: ->
-          console.log 'success'
-        error: ->
-          console.log 'error'
-        complete: ->
-          $(this).parents(".entry").find(".spinner").fadeOut fadeDelay
+  $(".entry textarea").focus ->
+    $(this).data "original", $(this).val()
+
+  $(".entry textarea").blur ->
+    if $(this).data("original") != $(this).val()
+      $(this).parents(".entry").find(".spinner").fadeIn fadeDelay, ->
+        $.ajax
+          url: "/people/" + $(this).attr("id")
+          dataType: "json"
+          type: "PUT"
+          context: this
+          data:
+            status: $(this).val()
+          success: ->
+            $(this).parents(".entry").find(".result").text "Saved"
+          error: ->
+            $(this).parents(".entry").find(".result").text "Save Failed"
+          complete: ->
+            $(this).parents(".entry").find(".spinner").fadeOut fadeDelay, ->
+              $(this).parents(".entry").find(".result").fadeIn(fadeDelay / 2).delay(fadeDelay * 2).fadeOut(fadeDelay)
 
 
   $(".entry textarea").click (e) ->
-#    console.log "click:  " + "focus:  " + $(this).is(":focus") + ": " + $(this).attr("id") + ":  " + $(this).val();
+    $(this).blur() if $(this).data("original") != $(this).val()
 
 
 
