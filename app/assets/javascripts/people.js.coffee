@@ -21,30 +21,35 @@ $ ->
   , ->
     $(this).removeClass "hover"
 
+
   $(".entry textarea").focus ->
     $(this).data "original", $(this).val()
 
+  $(".entry .save_button").click ->
+    # just clicking triggers textarea blur
+
+  $(".entry textarea").keyup ->
+    $(this).parents(".entry").find(".save_button").fadeIn fadeDelay if $(this).data("original") != $(this).val()
+    $(this).parents(".entry").find(".save_button").fadeOut fadeDelay if $(this).data("original") == $(this).val()
+
   $(".entry textarea").blur ->
-    if $(this).data("original") != $(this).val()
+    $(this).parents(".entry").find(".save_button").fadeOut fadeDelay * 0.61803399
+    textarea = $(this).parents(".entry").find "textarea"
+    if textarea.data("original") != textarea.val()
       $(this).parents(".entry").find(".spinner").fadeIn fadeDelay, ->
         $.ajax
-          url: "/people/" + $(this).attr("id")
+          url: "/people/" + textarea.attr("id")
           dataType: "json"
           type: "PUT"
-          context: this
+          context: textarea
           data:
-            status: $(this).val()
+            status: textarea.val()
           success: ->
             $(this).parents(".entry").find(".result").text "Saved"
           error: ->
             $(this).parents(".entry").find(".result").text "Save Failed"
           complete: ->
             $(this).parents(".entry").find(".spinner").fadeOut fadeDelay, ->
-              $(this).parents(".entry").find(".result").fadeIn(fadeDelay / 2).delay(fadeDelay * 2).fadeOut(fadeDelay)
-
-
-  $(".entry textarea").click (e) ->
-    $(this).blur() if $(this).data("original") != $(this).val()
-
+              $(this).parents(".entry").find(".result").fadeIn(fadeDelay).delay(fadeDelay * 2).fadeOut(fadeDelay)
 
 

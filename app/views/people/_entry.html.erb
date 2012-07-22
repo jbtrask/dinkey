@@ -4,6 +4,7 @@
     <label for="<%= element_id %>"><%= entry.name %></label>
     <textarea id="<%= element_id %>" cols="32" rows="8" ><%=  entry.status %></textarea>
     <img class="spinner" src="<%= image_path("spinner.gif") %>" alt="busy">
-    <span class="result">Saved</span>
+    <div class="result">Saved</div>
+    <img class="save_button" src="<%= image_path("save_button.png") %>" alt="save">
   </form>
 </div>
