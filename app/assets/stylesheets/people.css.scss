@@ -51,6 +51,9 @@ body {
     label {
       color: black;
     }
+    textarea {
+      border-style: solid;
+    }
   }
   form {
     height: 200px;
@@ -76,6 +79,11 @@ body {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    &[for="headline"] {
+      color: black;
+      font-weight: bold;
+      cursor: default;
+    }
   }
   textarea {
     margin: 0 8px;
@@ -90,13 +98,19 @@ body {
     background-color: $sky_dark;
     overflow: hidden;
     cursor: pointer;
+    &#headline {
+      color: #333;
+      font-weight: bold;
+      cursor: default;
+      border: 2px solid black;
+      width: 240px;
+      height: 116px;
+    }
     &:focus {
       border: 1px solid black;
       background-color: $light;
       color: black;
-      &-label {
-        color: black;
-      }
+      outline: none;
     }
   }
   .spinner {
@@ -125,22 +139,25 @@ body {
     text-align: center;
   }
   .save_button {
-     display: none;
-     position: absolute;
-     bottom: 10px;
-     left: 20px;
-     width: 48px;
-     height: 24px;
-     border: none;
-     margin: 0;
-     padding: 0;
-   }
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 48px;
+    height: 24px;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .rgba {
   .entry {
     label {
       color: $blue_text_a;
+      &[for="headline"] {
+        color: black;
+      }
     }
     textarea {
       background-color: $mask_dark_a;
