@@ -24,7 +24,7 @@ $ ->
 
   $(".entry textarea").focus ->
     $(this).data "original", $(this).val()
-    $(this).siblings("label").css("color", "black");
+    $(this).siblings("label").addClass "focus"
 
   $(".entry .save_button").click ->
     # just clicking triggers textarea blur
@@ -35,7 +35,7 @@ $ ->
 
   $(".entry textarea").blur ->
     $(this).parents(".entry").find(".save_button").fadeOut fadeDelay * 0.61803399
-    $(this).siblings("label").css("color", "rgb(0, 0, 102)");
+    $(this).siblings("label").removeClass "focus"
     textarea = $(this).parents(".entry").find "textarea"
     if textarea.data("original") != textarea.val()
       $(this).parents(".entry").find(".spinner").fadeIn fadeDelay, ->

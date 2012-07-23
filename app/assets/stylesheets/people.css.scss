@@ -48,9 +48,6 @@ body {
   min-height: 200px;
   &.hover {
     cursor: pointer;
-    label {
-      color: black;
-    }
     textarea {
       border-style: solid;
     }
@@ -83,6 +80,9 @@ body {
       color: black;
       font-weight: bold;
       cursor: default;
+    }
+    &.focus {
+      color: black;
     }
   }
   textarea {
@@ -153,8 +153,19 @@ body {
 
 .rgba {
   .entry {
+    &.hover {
+      label {
+        color: $blue_text;
+        &.focus {
+          color: black;
+        }
+      }
+    }
     label {
       color: $blue_text_a;
+      &.focus {
+        color: black;
+      }
       &[for="headline"] {
         color: black;
       }
