@@ -1,9 +1,9 @@
-<div class="entry">
-  <form target="#">
-    <label for="headline">Dinkey Dome 2012</label>
-    <textarea id="headline" cols="32" rows="8" disabled="disabled">Come to the 20th annual Dinkey Dome extravaganza! Yep, it's our 20th year coming to "The Dome", come one, come all ! Most folks are heading up the weekend before Labor Day, August 24-26th. Check below for everyone's status and feel free to update any info about yourself or others.</textarea>
-  </form>
+<div class="entries">
+  <div class="info">
+    <h1>Dinkey Dome 2012</h1>
+    <span>Come to the 20th annual Dinkey Dome extravaganza! Yep, it's our 20th year coming to "The Dome", come one, come all ! Most folks are heading up the weekend before Labor Day, August 24-26th. Check below for everyone's status and feel free to update any info about yourself or others.</span>
+  </div>
+  <% @display.each do |item| %>
+    <%=  render partial: "entry", locals: { entry: item } %>
+  <% end %>
 </div>
-<% @display.each do |item| %>
-  <%=  render partial: "entry", locals: { entry: item } %>
-<% end %>
