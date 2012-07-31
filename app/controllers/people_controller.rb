@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
   def index
     @display = []
     me = Person.find_by_name("James Bradford Trask")
-    @display << me
+    @display << me if me.present?
     others = Person.all
     others.delete me
     others.shuffle.each do |person|
